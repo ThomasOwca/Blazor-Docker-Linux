@@ -2,15 +2,24 @@
 
 <h1>Counter</h1>
 
+@if (currentCount > 2400 && currentCount < 7400)
+{
+    <h4>Blazor is so cool!</h4>
+}
+else if (currentCount > 4400)
+{
+    <h4></h4>
+}
+
 <p>Current count: @currentCount</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
-    private int currentCount = 0;
+    private int currentCount = 72;
 
     private void IncrementCount()
     {
-        currentCount++;
+        currentCount = currentCount++ * 2;
     }
 }
