@@ -76,6 +76,9 @@
                     filePath = $@"{path}\{fileName}";
                 }
 
+                Console.WriteLine($"OS: {os}.");
+                Console.WriteLine($"File Path: {filePath}");
+
                 System.IO.File.WriteAllText(filePath, textToWrite);
                 Console.WriteLine("Successfully wrote to file!");
             }
