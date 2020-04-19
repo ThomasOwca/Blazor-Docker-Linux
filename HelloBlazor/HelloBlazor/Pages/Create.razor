@@ -1,0 +1,88 @@
+﻿@page "/create"
+@using System.Runtime.InteropServices;
+
+<h1>Create Text File</h1>
+
+<label>Filename:</label>
+<input @bind="fileName" class="form-control" />
+<br />
+<label>Text:</label>
+<textarea @bind="text" rows="5" class="form-control"></textarea>
+<br />
+<button class="btn btn-primary" @onclick="SubmitFile">Submit File</button>
+
+@code {
+    private int currentCount = 72;
+    private string fileName = "";
+    private string text = "";
+    private FileHelper fileHelper = new FileHelper();
+
+    private void SubmitFile()
+    {
+        Console.WriteLine($"Text: {text}");
+        Console.WriteLine("Submit File clicked");
+        fileHelper.CreateFile(fileName, text);
+    }
+
+    public class FileHelper
+    {
+        private bool IsWindows() => RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
+        private bool IsMacOS() => RuntimeInformation.IsOSPlatform(OSPlatform.OSX);
+        private bool IsLinux() => RuntimeInformation.IsOSPlatform(OSPlatform.Linux);
+
+        public string GetOperatingSystem()
+        {
+            string os = "";
+
+            if (IsWindows())
+            {
+                os = "Windows";
+            }
+            else if (IsMacOS())
+            {
+                os = "Mac";
+            }
+            else if (IsLinux())
+            {
+                os = "Linux";
+            }
+            else
+            {
+                os = "Unknown";
+            }
+
+            return os;
+        }
+
+
+        public void CreateFile(string fileName, string textToWrite)
+        {
+            try
+            {
+                var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+                // WriteAllText creates a file, writes the specified string to the file,
+                // and then closes the file.    You do NOT need to call Flush() or Close().
+
+                string filePath = "";
+                string os = GetOperatingSystem();
+
+                if (os == "Windows")
+                {
+                    filePath = $@"{path}\Computer Science\Blazor Generated Files\{fileName}";
+                }
+                else if (os == "Linux")
+                {
+                    filePath = $@"{path}\{fileName}";
+                }
+
+                System.IO.File.WriteAllText(filePath, textToWrite);
+                Console.WriteLine("Successfully wrote to file!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+    }
+}

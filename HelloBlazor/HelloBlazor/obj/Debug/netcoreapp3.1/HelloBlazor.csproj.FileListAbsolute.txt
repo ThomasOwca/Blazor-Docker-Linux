@@ -92,3 +92,5 @@ C:\Users\Thomas\Documents\Computer Science\C#\Blazor\Blazor-Docker-Linux\HelloBl
 C:\Users\Thomas\Documents\Computer Science\C#\Blazor\Blazor-Docker-Linux\HelloBlazor\HelloBlazor\obj\Debug\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
 C:\Users\Thomas\Documents\Computer Science\C#\Blazor\Blazor-Docker-Linux\HelloBlazor\HelloBlazor\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
 C:\Users\Thomas\Documents\Computer Science\C#\Blazor\Blazor-Docker-Linux\HelloBlazor\HelloBlazor\obj\Debug\netcoreapp3.1\Razor\_Imports.razor.g.cs
+C:\Users\Thomas\Documents\Computer Science\C#\Blazor\Blazor-Docker-Linux\HelloBlazor\HelloBlazor\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Create.razor.g.cs
+C:\Users\Thomas\Documents\Computer Science\C#\Blazor\Blazor-Docker-Linux\HelloBlazor\HelloBlazor\obj\Debug\netcoreapp3.1\Razor\Pages\Create.razor.g.cs
